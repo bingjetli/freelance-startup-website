@@ -29,6 +29,8 @@
   --eleven-col: 91.66vw;
   --divider: #ccc;
   --box-roundness: 10px;
+
+  --homepage-hero-carousel-offset: -000%
 }
 html {
   box-sizing:border-box;
@@ -136,6 +138,67 @@ button:hover {
   height: 25em;
 }
 
+.homepage-hero-section {
+  max-height: 33em;
+}
+
+.animated-hero-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.carousel-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  height: 100%;
+}
+
+.carousel > * {
+  min-width: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s;
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 1em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.carousel-indicator-dot {
+  display: inline-block;
+  font-family: monospace;
+  border-radius: 100vw;
+  border: 1px solid white;
+  color: #0000;
+  height: 1em;
+  width: 1em;
+}
+
+.carousel-indicator-dot-filled {
+  background-color: white;
+}
+
+.flex-vertically-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #fff;
+}
+
 /* 2. MAIN */
 header {
   display: flex;
@@ -234,9 +297,17 @@ header nav {
   font-size: 1em;
 }
 
+#homepage-hero-carousel {
+  filter: brightness(33%);
+}
+
+#homepage-hero-carousel > * {
+  transform: translateX(var(--homepage-hero-carousel-offset));
+}
+
 /* 3. MEDIA QUERIES */
 @media screen and (max-width: 768px){
-  .hero-section {
+  .homepage-hero-section {
     height: 20em;
   } 
 
@@ -296,9 +367,14 @@ header nav {
     flex-direction: column;
   }
 
+  .section-flashcard,
   .section-flashcard-alt,
   .center-split-section > * {
     max-width: 100%;
+  }
+
+  .section-flashcard {
+    margin-right: var(--one-col);
   }
 
   #copyright-bar {
