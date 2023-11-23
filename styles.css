@@ -183,6 +183,7 @@ button:hover {
   color: #0000;
   height: 1em;
   width: 1em;
+  cursor: pointer;
 }
 
 .carousel-indicator-dot-filled {
