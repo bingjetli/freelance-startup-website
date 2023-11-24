@@ -12,9 +12,8 @@
 /* 1. GENERAL */
 :root {
   --bg: #fff;
-  --primary: #3a6;
-  --primary-highlighted: #4b7;
-  --primary-bg-accent:#efe;
+  --primary: #0057c8;
+  --primary-highlighted: #1481db;
   --text: #000;
   --one-col: 8.33vw;
   --two-col: 16.66vw;
@@ -200,16 +199,18 @@ button:hover {
   color: #fff;
 }
 
+img[alt="logo"] {
+  max-height: 50px;
+}
+
 /* 2. MAIN */
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 3em;
   background-color: --var(--bg);
-  padding-left: var(--one-col);
-  padding-right: var(--one-col);
+  padding: 0.5em var(--one-col);
 }
 
 header nav {
